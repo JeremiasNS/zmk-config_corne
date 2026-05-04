@@ -8,6 +8,11 @@
 
 #include "scylla.dtsi"
 
+/* Encoder EC11 habilitado apenas no lado direito */
+&encoder {
+    status = "okay";
+};
+
 &default_transform {
     col-offset = <6>;
 };
