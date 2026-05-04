@@ -45,6 +45,7 @@ endif
 if SHIELD_SCYLLA_RIGHT
 config EC11
     default y
-config EC11_TRIGGER_GLOBAL_THREAD
-    default y
+choice EC11_TRIGGER
+    default EC11_TRIGGER_GLOBAL_THREAD
+endchoice
 endif
