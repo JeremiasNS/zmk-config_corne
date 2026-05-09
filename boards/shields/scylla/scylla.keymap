@@ -12,13 +12,13 @@
  *
  * Layout físico — default:
  * ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
- * │  1  │  2  │  3  │  4  │  5  │  6  │   │  7  │  8  │  9  │  0  │  -  │MUTE │  ← linha 0
+ * │ 1!¹ │ 2@² │ 3#³ │ 4$£ │ 5%¢ │ 6¨¬ │   │ 7&{ │ 8*[ │ 9(] │ 0)} │ -_\ │MUTE │  ← linha 0
  * ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
- * │ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │BKSP │  ← linha 1
+ * │ ESC │  Q/ │  W? │  E° │  R® │  Tŧ │   │  Y← │  U↓ │  I→ │  Oø │  Pþ │BKSP │  ← linha 1
  * ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
- * │ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  Ç  │ ENT │  ← linha 2
+ * │ TAB │  Aæ │  Sß │  Dð │  Fđ │  Gŋ │   │  Hħ │  J̉̉ˀ │  K  │  Lł │  Ç´ │ ENT │  ← linha 2
  * ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
- * │CAPS │  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  <  │  >  │  :  │ DEL │  ← linha 3
+ * │CAPS │  Z« │  X» │  C© │  V„ │  B“ │   │  N” │  Mµ │  <× │  >÷ │  :; │ DEL │  ← linha 3
  * ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
  *                   │ GUI │ LWR │ SPC │   │SHFT │ RSE │ ALT │                    ← linha 4
  *                   ╰─────┼─────┼─────╯   ╰─────┼─────╯─────╯
@@ -27,13 +27,13 @@
  *
  * Layout físico — lower (mo 1):
  * ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
- * │  !  │  @  │  #  │  $  │  %  │  ¨  │   │  &  │  *  │  (  │  )  │  _  │  +  │  ← linha 0
+ * │     │     │     │     │     │     │   │     │     │     │     │ +=  │     │  ← linha 0
  * ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
- * │  '  │  /  │  ?  │     │     │     │   │     │     │  {  │  }  │  [  │  ]  │  ← linha 1
+ * │     │     │     │     │     │     │   │     │     │     │     │ ~^  │  ´` │  ← linha 1
  * ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
- * │  "  │  \  │     │     │     │     │   │     │     │     │     │ ~^  │ ´`  │  ← linha 2
+ * │     │  \  │     │     │     │     │   │     │     │     │     │     │     │  ← linha 2
  * ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
- * │     │  |  │     │     │     │     │   │     │     │     │     │     │     │  ← linha 3
+ * │     │  §  |     │     │     │     │   │     │     │     │     │     │     │  ← linha 3
  * ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
  *                   │     │     │     │   │     │     │     │                    ← linha 4
  *                   ╰─────┼─────┼─────╯   ╰─────┼─────╯─────╯
@@ -64,38 +64,26 @@
 
         default_layer {
             bindings = <
-/* linha 0 */ &kp N1    &kp N2  &kp N3  &kp N4    &kp N5  &kp N6     &kp N7    &kp N8  &kp N9        &kp N0      &kp MINUS    &kp C_MUTE
-/* linha 1 */ &kp ESC   &kp Q   &kp W   &kp E     &kp R   &kp T      &kp Y     &kp U   &kp I         &kp O       &kp P        &kp BSPC
-/* linha 2 */ &kp TAB   &kp A   &kp S   &kp D     &kp F   &kp G      &kp H     &kp J   &kp K         &kp L       &kp SEMI     &kp RET
-/* linha 3 */ &kp CAPS  &kp Z   &kp X   &kp C     &kp V   &kp B      &kp N     &kp M   &kp LS(COMMA) &kp LS(DOT) &kp LS(SEMI) &kp DEL
-/* linha 4 */                           &kp LGUI  &mo 1   &kp SPACE  &kp RSHFT &mo 2   &kp RALT
-/* linha 5 */                                     &mo 3   &kp LALT   &kp RALT  &kp RCTRL
+/* linha 0 */ &kp N1    &kp N2  &kp N3  &kp N4    &kp N5  &kp N6     &kp N7    &kp N8  &kp N9    &kp N0   &kp MINUS  &kp C_MUTE
+/* linha 1 */ &kp ESC   &kp Q   &kp W   &kp E     &kp R   &kp T      &kp Y     &kp U   &kp I     &kp O    &kp P      &kp BSPC
+/* linha 2 */ &kp TAB   &kp A   &kp S   &kp D     &kp F   &kp G      &kp H     &kp J   &kp K     &kp L    &kp SEMI   &kp RET
+/* linha 3 */ &kp CAPS  &kp Z   &kp X   &kp C     &kp V   &kp B      &kp N     &kp M   &kp COMMA &kp DOT  &kp FSLH   &kp DEL
+/* linha 4 */                           &kp LGUI  &tog 1  &kp SPACE  &kp RSHFT &mo 2   &kp RALT
+/* linha 5 */                                     &mo 2   &kp LALT   &kp RALT  &kp RCTRL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         lower_layer {
             bindings = <
-/* linha 0 */ &kp EXCL    &kp AT        &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET     &kp AMPS  &kp STAR  &kp LPAR     &kp RPAR     &kp UNDER    &kp PLUS
-/* linha 1 */ &kp SQT     &kp FSLH      &kp QMARK &trans    &trans     &trans        &trans    &trans    &kp RA(SQT)  &kp RA(NUHS) &kp RA(LBKT) &kp RA(RBKT)
-/* linha 2 */ &kp LS(SQT) &kp RA(MINUS) &trans    &trans    &trans     &trans        &trans    &trans    &trans       &trans       &kp RBKT     &kp LBKT
-/* linha 3 */ &trans      &kp RA(EQUAL) &trans    &trans    &trans     &trans        &trans    &trans    &trans       &trans       &trans       &trans
-/* linha 4 */                           &trans    &trans    &trans     &trans        &trans    &trans
-/* linha 5 */                                     &trans    &trans     &trans        &trans
+/* linha 0 */ &kp F1    &kp F2    &kp F3  &kp F4  &kp F5  &kp F6    &kp F7    &kp F8    &kp F9  &kp F10    &kp F11   &kp F12
+/* linha 1 */ &kp APOS  &trans    &trans  &trans  &trans  &trans    &trans    &trans    &trans  &kp EQUAL  &kp SQT   &kp LBKT
+/* linha 2 */ &trans    &kp BSLH  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp LBRC  &kp RBRC
+/* linha 3 */ &trans    &trans    &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans    &trans
+/* linha 4 */                             &trans  &tog 1  &trans    &trans    &trans    &trans
+/* linha 5 */                                     &trans  &trans    &trans    &trans
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
-        };
-
-        raise_layer {
-            bindings = <
-/* linha 0 */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-/* linha 1 */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-/* linha 2 */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-/* linha 3 */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-/* linha 4 */                         &trans  &trans  &trans  &trans  &trans  &trans
-/* linha 5 */                                 &trans  &trans  &trans  &trans
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         bt_layer {
@@ -107,7 +95,7 @@
 /* linha 4 */                                       &trans       &trans       &trans          &trans  &trans  &trans
 /* linha 5 */                                                    &trans       &trans          &trans  &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
