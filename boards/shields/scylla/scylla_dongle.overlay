@@ -1,0 +1,58 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ *
+ * Scylla MK2 — Dongle com display OLED SSD1306 128x64 I2C
+ *
+ * Ligações:
+ *   VCC → 3.3V do nice!nano
+ *   GND → GND
+ *   SDA → pro_micro 2 (P0.17)
+ *   SCL → pro_micro 3 (P0.20)
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan    = &mock_kscan;
+        zmk,matrix-transform = &default_transform;
+        zephyr,display = &oled;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <0>;
+        rows = <0>;
+        map = <>;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+/* I2C0 — pinos SDA/SCL do nice!nano */
+&i2c0 {
+    status = "okay";
+    sda-pin = <17>;   /* P0.17 — pro_micro 2 */
+    scl-pin = <20>;   /* P0.20 — pro_micro 3 */
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+};

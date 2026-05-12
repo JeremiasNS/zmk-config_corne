@@ -6,3 +6,6 @@ config SHIELD_SCYLLA_LEFT
 
 config SHIELD_SCYLLA_RIGHT
     def_bool $(shields_list_contains,scylla_right)
+
+config SHIELD_SCYLLA_DONGLE
+    def_bool $(shields_list_contains,scylla_dongle)
