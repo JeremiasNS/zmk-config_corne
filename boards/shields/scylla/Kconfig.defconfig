@@ -16,8 +16,6 @@ config BT_MAX_PAIRED
     default 7
 config ZMK_DISPLAY
     default y
-config ZMK_DISPLAY_WORK_QUEUE_DEDICATED
-    default y
 config I2C
     default y
 config SSD1306
