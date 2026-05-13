@@ -18,8 +18,6 @@ config ZMK_DISPLAY
     default y
 config I2C
     default y
-config SH1106
-    default y
 if LVGL
 config LV_Z_VDB_SIZE
     default 64
