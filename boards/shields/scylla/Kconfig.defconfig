@@ -3,7 +3,7 @@
 
 if SHIELD_SCYLLA_DONGLE
 config ZMK_KEYBOARD_NAME
-    default "Scylla"
+    default "scylla"
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 config ZMK_SPLIT
@@ -18,7 +18,7 @@ config ZMK_DISPLAY
     default y
 config I2C
     default y
-config SSD1306
+config SH1106
     default y
 if LVGL
 config LV_Z_VDB_SIZE
