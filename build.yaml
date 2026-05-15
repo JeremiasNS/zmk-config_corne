@@ -2,8 +2,8 @@
 include:
   - board: nice_nano
     shield: settings_reset
-  - board: nice_nano
-    shield: scylla_dongle nice_oled
+  - board: xiao_ble
+    shield: scylla_dongle dongle_display
   - board: nice_nano
     shield: scylla_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
