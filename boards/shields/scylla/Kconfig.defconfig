@@ -22,6 +22,8 @@ config USB
 
 config ZMK_USB
     default y
+    
+endif
 
 if SHIELD_SCYLLA_LEFT || SHIELD_SCYLLA_RIGHT
 
