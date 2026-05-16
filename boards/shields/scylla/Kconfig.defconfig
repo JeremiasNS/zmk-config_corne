@@ -47,6 +47,7 @@ endchoice
 
 endif
 
+endif
 
 # if SHIELD_SCYLLA_RIGHT
 # config EC11
