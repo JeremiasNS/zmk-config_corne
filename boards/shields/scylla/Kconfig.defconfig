@@ -9,9 +9,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config ZMK_SPLIT
-    default y
-
 # Set this to the number of peripherals your dongle will have.
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
@@ -28,7 +25,7 @@ config BT_MAX_PAIRED
 
 endif
 
-if SHIELD_SCYLLA_LEFT || SHIELD_SCYLLA_RIGHT
+if SHIELD_SCYLLA_LEFT || SHIELD_SCYLLA_RIGHT || SHIELD_SCYLLA_DONGLE
 
 config ZMK_SPLIT
     default y
